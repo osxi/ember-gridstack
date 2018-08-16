@@ -42,12 +42,13 @@ module.exports = {
 
 
     // Gridstack
-    app.import({
-      development: app.bowerDirectory + '/gridstack/dist/gridstack.js',
-      production:  app.bowerDirectory + '/gridstack/dist/gridstack.min.js'
+    [ 'gridstack', 'gridstack.jQueryUI' ].forEach(function(module) {
+      app.import({
+        development: app.bowerDirectory + '/gridstack/dist/' + module + '.js',
+        production: app.bowerDirectory + '/gridstack/dist/' + module + '.min.js'
+      });
     });
     app.import(app.bowerDirectory + '/gridstack/dist/gridstack.css');
-
   },
 
   getOptions() {
