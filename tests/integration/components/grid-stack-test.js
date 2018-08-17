@@ -34,7 +34,7 @@ test('gridstack with items', function(assert) {
   this.render(hbs`
     {{#grid-stack}}
       {{#each items as |item|}}
-        {{grid-stack-item}}
+        {{grid-stack-item options=(hash x=0 y=0)}}
       {{/each}}
     {{/grid-stack}}
   `);
@@ -151,7 +151,7 @@ test('onChange action', function(assert) {
   this.render(hbs`
     {{#grid-stack}}
       {{#each items as |item|}}
-        {{#grid-stack-item}}
+        {{#grid-stack-item options=(hash x=0 y=0)}}
           {{item}}
         {{/grid-stack-item}}
       {{/each}}
@@ -180,7 +180,7 @@ test('onChange action', function(assert) {
       onChange=(action onChange)
     }}
       {{#each items as |item|}}
-        {{#grid-stack-item}}
+        {{#grid-stack-item options=(hash x=0 y=0)}}
           {{item}}
         {{/grid-stack-item}}
       {{/each}}
